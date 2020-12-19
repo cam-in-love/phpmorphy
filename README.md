@@ -5,7 +5,6 @@
 [![Latest Stable Version](https://poser.pugx.org/seoservice2020/phpmorphy/version)](https://packagist.org/packages/seoservice2020/phpmorphy)
 [![Total Downloads](https://poser.pugx.org/seoservice2020/phpmorphy/downloads)](https://packagist.org/packages/seoservice2020/phpmorphy)
 [![tests](https://github.com/seoservice2020/phpmorphy/workflows/tests/badge.svg)](https://github.com/seoservice2020/phpmorphy/actions)
-[![StyleCI](https://styleci.io/repos/40018123/shield?style=flat)](https://styleci.io/repos/40018123)
 [![codecov](https://codecov.io/gh/seoservice2020/phpmorphy/branch/master/graph/badge.svg)](https://codecov.io/gh/seoservice2020/phpmorphy)
 [![License](https://poser.pugx.org/seoservice2020/phpmorphy/license)](https://packagist.org/packages/seoservice2020/phpmorphy)
 

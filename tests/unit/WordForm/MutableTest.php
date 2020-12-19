@@ -28,7 +28,8 @@ class test_WordForm_Mutable extends \PHPUnit\Framework\TestCase
 
     protected function createWordForm() {
         return new phpMorphy_WordForm_WordForm(
-            $this->getMockBuilder()->getMock('phpMorphy_Paradigm_ParadigmInterface')
+            $this->getMockBuilder(phpMorphy_Paradigm_ParadigmInterface::class)
+                ->getMock()
         );
     }
 

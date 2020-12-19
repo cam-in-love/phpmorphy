@@ -1,8 +1,8 @@
 {
-    "name": "maxakawizard/phpmorphy",
+    "name": "seoservice2020/phpmorphy",
     "description": "phpMorphy - morphological analyzer library for Russian, English and German languages",
     "keywords": ["phpMorphy"],
-    "homepage": "https://github.com/MAXakaWIZARD/phpmorphy",
+    "homepage": "https://github.com/SEOService2020/phpmorphy",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -14,6 +14,10 @@
         {
             "name": "Kamaev Vladimir",
             "email": "heromantor@users.sourceforge.net"
+        },
+        {
+            "name": "Sergey Pronin",
+            "email": "sergotail@mail.ru"
         }
     ],
     "autoload": {
@@ -26,8 +30,8 @@
         "ext-mbstring": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.8",
-        "satooshi/php-coveralls": "~1.0"
+        "phpunit/phpunit": "^7.0",
+        "satooshi/php-coveralls": "^2.0"
     },
     "config": {
         "platform": {

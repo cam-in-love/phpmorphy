@@ -1,5 +1,5 @@
 <?php
-class test_Functional_Common extends PHPUnit_Framework_TestCase {
+class test_Functional_Common extends \PHPUnit\Framework\TestCase {
     /**
      * @var phpMorphy_MorphyInterface
      */

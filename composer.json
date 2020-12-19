@@ -26,16 +26,16 @@
         }
     },
     "require": {
-        "php": ">=5.3",
+        "php": ">=7.3",
         "ext-mbstring": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0",
+        "phpunit/phpunit": "^9.0",
         "satooshi/php-coveralls": "^2.0"
     },
     "config": {
         "platform": {
-            "php": "5.3.9"
+            "php": "7.4.12"
         }
     }
 }

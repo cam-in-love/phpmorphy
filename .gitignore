@@ -1,4 +1,5 @@
 /vendor
 /build
+/.history
 phpunit.xml
 composer.lock

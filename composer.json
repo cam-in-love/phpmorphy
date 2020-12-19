@@ -33,9 +33,11 @@
         "phpunit/phpunit": "^9.0",
         "satooshi/php-coveralls": "^2.0"
     },
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
     "config": {
-        "platform": {
-            "php": "7.4.12"
-        }
+        "sort-packages": true
     }
 }

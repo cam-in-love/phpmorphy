@@ -12,19 +12,14 @@
             <directory>./tests/unit</directory>
         </testsuite>
     </testsuites>
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./src</directory>
-            <exclude>
-                <directory suffix=".php">./vendor</directory>
-                <directory suffix=".php">./src/phpMorphy/Generator</directory>
-            </exclude>
-        </whitelist>
-    </filter>
     <coverage processUncoveredFiles="true">
         <include>
             <directory suffix=".php">./src</directory>
         </include>
+        <exclude>
+            <directory suffix=".php">./vendor</directory>
+            <directory suffix=".php">./src/phpMorphy/Generator</directory>
+        </exclude>
         <report>
             <clover outputFile="clover.xml"/>
             <text outputFile="php://stdout"/>

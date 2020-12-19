@@ -1,7 +1,10 @@
 {
     "name": "seoservice2020/phpmorphy",
     "description": "phpMorphy - morphological analyzer library for Russian, English and German languages",
-    "keywords": ["phpMorphy"],
+    "keywords": [
+        "phpMorphy",
+        "nlp"
+    ],
     "homepage": "https://github.com/SEOService2020/phpmorphy",
     "type": "library",
     "license": "MIT",
@@ -30,8 +33,7 @@
         "ext-mbstring": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.0",
-        "satooshi/php-coveralls": "^2.0"
+        "phpunit/phpunit": "^8.0"
     },
     "prefer-stable": true,
     "scripts": {

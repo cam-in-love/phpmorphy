@@ -14,7 +14,7 @@ class test_Paradigm_ArrayBased extends \PHPUnit\Framework\TestCase
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
-    protected function setUp()
+    protected function setUp() : void
     {
         $wf = new phpMorphy_WordForm_WordForm();
         $wf->setBase('test');

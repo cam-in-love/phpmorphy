@@ -5,7 +5,7 @@ class test_Functional_Common extends \PHPUnit\Framework\TestCase {
      */
     protected $morphy;
 
-    function setUp() {
+    function setUp() : void {
         $this->morphy = new phpMorphy(
             null,
             'ru_RU'

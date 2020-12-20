@@ -10,8 +10,6 @@ phpMorphy is morphological analyzer library for Russian, Ukrainian, English and 
 
 **This version supports only PHP 7.2, 7.3 and 7.4.**
 
-**At this moment no English dictionary added!**
-
 * [Website (in Russian)](http://phpmorphy.sourceforge.net/)
 * [Sourceforge project](http://sourceforge.net/projects/phpmorphy)
 

@@ -1,6 +1,6 @@
 {
     "name": "seoservice2020/phpmorphy",
-    "description": "phpMorphy - morphological analyzer library for Russian, English and German languages",
+    "description": "phpMorphy - morphological analyzer library for Russian, Ukrainian, English and German languages.",
     "keywords": [
         "phpMorphy",
         "nlp"

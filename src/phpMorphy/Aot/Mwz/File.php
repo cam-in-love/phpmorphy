@@ -67,11 +67,11 @@ class phpMorphy_Aot_Mwz_File {
     static function getEncodingForLang($lang) {
         switch(strtolower($lang)) {
             case 'russian':
-                return 'windows-1251';
+                return 'utf-8';
             case 'english':
-                return 'windows-1250';
+                return 'utf-8';
             case 'german':
-                return 'windows-1252';
+                return 'utf-8';
             default:
                 return false;
         }

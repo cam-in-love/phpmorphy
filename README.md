@@ -75,6 +75,17 @@ To build your dictionary from one of the sources:
     php bin/dict-build/build-dict.php path/to/xml/ru_RU.xml path/to/otput/ utf-8 1 1 path/to/morphy/builder/root/folder/ path/to/aot/root/folder
     ```
 
+## Exporting dictionaries
+
+If you need to use some specific dictionaries with phpMorphy, there are categorized dictionaries in `dicts/categorized/` folder. All dictionaries are uppercase.
+
+Default dictionaries are:
+
+* Russian language: AOT UTF-8 uppercase dictionary with `ё` letter support
+* English language: AOT UTF-8 uppercase dictionary
+* German language: AOT UTF-8 uppercase dictionary
+* Ukrainian language: MySpell UTF-8 uppercase dictionary
+
 ## Speed (DEPRECATED)
 
 ### Single word mode

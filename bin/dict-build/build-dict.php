@@ -1,17 +1,43 @@
 #!/usr/bin/env php
 <?php
+
 if(2 == (ini_get('mbstring.func_overload') & 2)) {
     die("don`t overload string functions in mbstring extension, see mbstring.func_overload option");
 }
 
 if($argc < 4) {
-    echo "Usage " . $argv[0] . " XML_FILE OUT_DIR ENCODING [WITH_FORM_NO - 1/0] [BUILD_DIALING_ANCODES_MAP - 1/0]";
+    echo "Usage " . $argv[0] . " XML_FILE OUT_DIR ENCODING [WITH_FORM_NO - 1/0] [BUILD_DIALING_ANCODES_MAP - 1/0] [PATH_TO_MORPHY_BUILDER] [PATH_TO_AOT_SOURCES]";
     exit;
 }
 
-define('BIN_DIR', __DIR__);
-define('MORPHY_DIR', @getenv('MORPHY_DIR') . '/');
-define('MORPHY_BUILDER', MORPHY_DIR . 'bin/morphy_builder.exe');
+
+function getArg(int $index, $default = null)
+{
+    global $argv;
+    return isset($argv[$index]) ? $argv[$index] : $default;
+}
+
+
+// for backward compatibility, check the env var first
+if (!($morphy_builder_dir = @getenv('MORPHY_DIR'))) {
+    // if env var is not set and no arg provided, use phpmorphy provided builder
+    $morphy_builder_dir = getArg(6, __DIR__ . '/../morph-builder/0.3.1-win32/');
+}
+
+
+// for backward compatibility, check the env var first
+if (!($aot_root = @getenv('RML'))) {
+    // if env var is not set and no arg provided,
+    // assume that aot is located beside phpmorphy in aot folder
+    $aot_root = getArg(6, __DIR__ . '/../../../aot/');
+}
+
+
+// set env var for script exec for aot tools needs
+@putenv("RML=$aot_root");
+define('BUILD_DICT_BIN_DIR', __DIR__);
+define('MORPHY_BUILDER', $morphy_builder_dir . '/bin/morphy_builder.exe');
+
 
 if(false == ($phprc = @getenv('PHPRC'))) {
     define('PHP_BIN', '/usr/bin/env php');
@@ -177,19 +203,19 @@ $args = array(
     '--case' => 'upper',
 );
 
-if(@$argv[4]) {
+if (getArg(4, false)) {
     $args['--with-form-no'] = 'yes';
 }
 
 doExec('Build dictionary', MORPHY_BUILDER, $args);
 
-doExec('Extract gramtab', BIN_DIR . '/extract-gramtab.php', array($morph_data_file, $out_dir));
-doExec('Extract graminfo header', BIN_DIR . '/extract-graminfo-header.php', array($morph_data_file, $out_dir));
-doExec('Create ancodes cache', BIN_DIR . '/extract-ancodes.php', array($morph_data_file, $out_dir));
+doExec('Extract gramtab', BUILD_DICT_BIN_DIR . '/extract-gramtab.php', array($morph_data_file, $out_dir));
+doExec('Extract graminfo header', BUILD_DICT_BIN_DIR . '/extract-graminfo-header.php', array($morph_data_file, $out_dir));
+doExec('Create ancodes cache', BUILD_DICT_BIN_DIR . '/extract-ancodes.php', array($morph_data_file, $out_dir));
 
-if(@$argv[5]) {
+if (getArg(5, false)) {
     if(false !== ($language = locale_to_dialing($locale))) {
-        doExec('Create dialing ancodes map', BIN_DIR . '/extract-ancodes-map.php', array($morph_data_file, $language, $out_dir));
+        doExec('Create dialing ancodes map', BUILD_DICT_BIN_DIR . '/extract-ancodes-map.php', array($morph_data_file, $language, $out_dir));
     } else {
         echo "Locale '$locale' unsupported for dialing dictionaries. Skip ancodes map." . PHP_EOL;
     }

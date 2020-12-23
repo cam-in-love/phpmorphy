@@ -25,5 +25,5 @@ return array (
   'ancodes_index_size' => 328,
   'char_size' => 1,
   'lang' => 'en_EN',
-  'encoding' => 'windows-1250',
+  'encoding' => 'utf-8',
 );

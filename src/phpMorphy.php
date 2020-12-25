@@ -681,7 +681,7 @@ class phpMorphy implements phpMorphy_MorphyInterface {
         if($this->options['use_ancodes_cache']) {
             $result = new phpMorphy_GramInfo_AncodeCache(
                 $result,
-                $this->storage_factory->open(
+                $this->storage_factory->create(
                     $this->options['storage'],
                     $bundle->getGramInfoAncodesCacheFile(),
                     true
@@ -712,7 +712,7 @@ class phpMorphy implements phpMorphy_MorphyInterface {
                 return array(
                     'phpMorphy_AncodesResolver_ToDialingAncodes',
                     array(
-                        $this->storage_factory->open(
+                        $this->storage_factory->create(
                             $this->options['storage'],
                             $bundle->getAncodesMapFile(),
                             true

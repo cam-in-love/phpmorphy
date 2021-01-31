@@ -24,7 +24,7 @@ class phpMorphy_Shm_Cache implements phpMorphy_Shm_CacheInterface {
     const DEFAULT_MODE = 0644;
     const READ_BLOCK_SIZE = 8192;
 
-    const SHM_SEGMENT_SIZE = 25165824; // 24Mb
+    const SHM_SEGMENT_SIZE = 31457280;  // 30Mb
     const SHM_SEGMENT_ID = 0x54358308;
     const SEMAPHORE_KEY = 0x54358309;
     const SHM_HEADER_MAX_SIZE = 32767;

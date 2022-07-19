@@ -1,11 +1,11 @@
 {
-    "name": "seoservice2020/phpmorphy",
+    "name": "cam-in-love/phpmorphy",
     "description": "phpMorphy - morphological analyzer library for Russian, Ukrainian, English and German languages.",
     "keywords": [
         "phpMorphy",
         "nlp"
     ],
-    "homepage": "https://github.com/SEOService2020/phpmorphy",
+    "homepage": "https://github.com/cam-in-love/phpmorphy",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -29,7 +29,7 @@
         }
     },
     "require": {
-        "php": ">=7.2 <8.0",
+        "php": ">=7.2",
         "ext-mbstring": "*"
     },
     "require-dev": {
